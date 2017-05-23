@@ -52,7 +52,7 @@ const config = { // we use a nightwatch.conf.js file so we can include comments 
         "waitForConditionTimeout": 15000 // on localhost sometimes internet is slow so wait...
       },
       "desiredCapabilities": {
-        "browserName": "firefox",
+        "browserName": "chrome",
         "chromeOptions": {
           "args": [
             `Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46

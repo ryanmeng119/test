@@ -16,7 +16,8 @@ const config = { // we use a nightwatch.conf.js file so we can include comments 
     "port": 4444,
     "cli_args": {
       "webdriver.chrome.driver" : BINPATH + "chromedriver", // also downloaded by selenium-download
-      "webdriver.firefox.profile" : BINPATH + "geckodriver"
+      "webdriver.gecko.driver" : BINPATH + "geckodriver",
+      "webdriver.edge.griver":""
     }
   },
   "test_workers" : {"enabled" : true, "workers" : "auto"}, // perform tests in parallel where possible
@@ -49,7 +50,7 @@ const config = { // we use a nightwatch.conf.js file so we can include comments 
         "waitForConditionTimeout": 15000 // on localhost sometimes internet is slow so wait...
       },
       "desiredCapabilities": {
-        "browserName": "firefox",
+        "browserName": "chrome",
         "chromeOptions": {
           "args": [
             `Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46
@@ -87,8 +88,8 @@ const config = { // we use a nightwatch.conf.js file so we can include comments 
         // "platform": "XP",
         "browserName": "firefox",
         "version": "33",
-        // "javascriptEnabled": true,
-        // "acceptSslCerts": true
+        "javascriptEnabled": true,
+        "acceptSslCerts": true
       }
     },
     "internet_explorer_10" : {

@@ -5,7 +5,7 @@ const SCREENSHOT_PATH = "./node_modules/nightwatch/screenshots/" + PKG.version +
 
 const config = { // we use a nightwatch.conf.js file so we can include comments and helper functions
   "src_folders": [
-    "test/e2e"     // we use '/test' as the name of our test directory by default. So 'test/e2e' for 'e2e'.
+    "test/google"     // we use '/test' as the name of our test directory by default. So 'test/e2e' for 'e2e'.
   ],
   "output_folder": "./node_modules/nightwatch/reports", // reports (test outcome) output by Nightwatch
   "selenium": {
@@ -15,13 +15,15 @@ const config = { // we use a nightwatch.conf.js file so we can include comments 
     "host": "127.0.0.1",
     "port": 4444,
     "cli_args": {
-      "webdriver.chrome.driver" : BINPATH + "chromedriver" // also downloaded by selenium-download
+      "webdriver.chrome.driver" : BINPATH + "chromedriver", // also downloaded by selenium-download
+      "webdriver.gecko.driver" : BINPATH + "geckodriver",
+      "webdriver.edge.griver":""
     }
   },
   "test_workers" : {"enabled" : true, "workers" : "auto"}, // perform tests in parallel where possible
   "test_settings": {
     "default": {
-      "launch_url": "http://ondemand.saucelabs.com:80", // we're testing a local site on Saucelabs
+      "launch_url": "http://localhost", // we're testing a Public or "staging" site on Saucelabs
       "selenium_port": 80,
       "selenium_host": "ondemand.saucelabs.com",
       "silent": true,
@@ -29,15 +31,11 @@ const config = { // we use a nightwatch.conf.js file so we can include comments 
         "enabled": true, // save screenshots to this directory (excluded by .gitignore)
         "path": SCREENSHOT_PATH
       },
-      "username" : process.env.SAUCE_USERNAME,     // if you want to use Saucelabs remember to
-      "access_key" : process.env.SAUCE_ACCESS_KEY, // export your environment variables (see readme)
+      "username" : "${SAUCE_USERNAME}",     // if you want to use Saucelabs remember to
+      "access_key" : "${SAUCE_ACCESS_KEY}", // export your environment variables (see readme)
       "globals": {
         "waitForConditionTimeout": 10000    // wait for content on the page before continuing
-      },
-      "desiredCapabilities": {
-				"tunnel-identifier": process.env.TRAVIS_JOB_NUMBER, // needed for sauce-connect, i.e for testing localhost on saucelabs
-			  build: `build-${process.env.TRAVIS_JOB_NUMBER}` // needed for sauce-connect
-			}
+      }
     },
     "local": {
       "launch_url": "http://localhost",
@@ -87,9 +85,11 @@ const config = { // we use a nightwatch.conf.js file so we can include comments 
     },
     "firefox" : {
       "desiredCapabilities": {
-        "platform": "XP",
+        // "platform": "XP",
         "browserName": "firefox",
-        "version": "33"
+        "version": "33",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true
       }
     },
     "internet_explorer_10" : {
