@@ -1,0 +1,41 @@
+15:54:33.108 INFO - Selenium build info: version: '3.4.0', revision: 'unknown'
+15:54:33.108 INFO - Launching a standalone Selenium Server
+2017-05-30 15:54:33.126:INFO::main: Logging initialized @245ms to org.seleniumhq.jetty9.util.log.StdErrLog
+15:54:33.179 INFO - Driver provider org.openqa.selenium.ie.InternetExplorerDriver registration is skipped:
+ registration capabilities Capabilities [{ensureCleanSession=true, browserName=internet explorer, version=, platform=WINDOWS}] does not match the current platform MAC
+15:54:33.180 INFO - Driver provider org.openqa.selenium.edge.EdgeDriver registration is skipped:
+ registration capabilities Capabilities [{browserName=MicrosoftEdge, version=, platform=WINDOWS}] does not match the current platform MAC
+15:54:33.180 INFO - Driver class not found: com.opera.core.systems.OperaDriver
+15:54:33.180 INFO - Driver provider com.opera.core.systems.OperaDriver registration is skipped:
+Unable to create new instances on this machine.
+15:54:33.180 INFO - Driver class not found: com.opera.core.systems.OperaDriver
+15:54:33.180 INFO - Driver provider com.opera.core.systems.OperaDriver is not registered
+2017-05-30 15:54:33.221:INFO:osjs.Server:main: jetty-9.4.3.v20170317
+2017-05-30 15:54:33.267:INFO:osjsh.ContextHandler:main: Started o.s.j.s.ServletContextHandler@59f99ea{/,null,AVAILABLE}
+2017-05-30 15:54:33.296:INFO:osjs.AbstractConnector:main: Started ServerConnector@20b6097a{HTTP/1.1,[http/1.1]}{0.0.0.0:4444}
+2017-05-30 15:54:33.297:INFO:osjs.Server:main: Started @416ms
+15:54:33.297 INFO - Selenium Server is up and running
+15:54:33.668 INFO - SessionCleaner initialized with insideBrowserTimeout 0 and clientGoneTimeout 1800000 polling every 180000
+15:54:33.692 INFO - Executing: [new session: Capabilities [{acceptSslCerts=true, name=Test, browserName=chrome, javascriptEnabled=true, chromeOptions={args=[Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46
+            (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3, --window-size=640,1136]}, platform=ANY}]])
+15:54:33.710 INFO - Creating a new session for Capabilities [{acceptSslCerts=true, name=Test, browserName=chrome, javascriptEnabled=true, chromeOptions={args=[Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46
+            (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3, --window-size=640,1136]}, platform=ANY}]
+Starting ChromeDriver 2.29.461585 (0be2cd95f834e9ee7c46bcc7cf405b483f5ae83b) on port 30676
+Only local connections are allowed.
+15:54:35.699 INFO - Detected dialect: OSS
+15:54:35.723 INFO - Done: [new session: Capabilities [{acceptSslCerts=true, name=Test, browserName=chrome, javascriptEnabled=true, chromeOptions={args=[Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46
+            (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3, --window-size=640,1136]}, platform=ANY}]]
+15:54:35.748 INFO - Executing: [get: http://subway.onead.com.tw/])
+15:54:37.072 INFO - Done: [get: http://subway.onead.com.tw/]
+15:54:37.082 INFO - Executing: [find elements: By.cssSelector: body])
+15:54:37.168 INFO - Done: [find elements: By.cssSelector: body]
+15:54:37.185 INFO - Executing: [is displayed: 0 [[ChromeDriver: chrome on MAC (711dbb2ad27e76772df72bc0b4551dd2)] -> css selector: body]])
+15:54:37.239 INFO - Done: [is displayed: 0 [[ChromeDriver: chrome on MAC (711dbb2ad27e76772df72bc0b4551dd2)] -> css selector: body]]
+15:54:37.249 INFO - Executing: [find elements: By.cssSelector: .navbar])
+15:54:37.271 INFO - Done: [find elements: By.cssSelector: .navbar]
+15:54:37.279 INFO - Executing: [find elements: By.cssSelector: #main])
+15:54:37.300 INFO - Done: [find elements: By.cssSelector: #main]
+15:54:37.304 INFO - Executing: [get current url])
+15:54:37.314 INFO - Done: [get current url]
+15:54:37.319 INFO - Executing: [delete session: f529d43c-a36c-498c-a6ac-cf313461ef32])
+15:54:37.394 INFO - Done: [delete session: f529d43c-a36c-498c-a6ac-cf313461ef32]
