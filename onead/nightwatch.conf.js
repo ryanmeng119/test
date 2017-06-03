@@ -46,7 +46,8 @@ const config = { // we use a nightwatch.conf.js file so we can include comments 
                 "path": SCREENSHOT_PATH
             }, // this allows us to control the
             "globals": {
-                "waitForConditionTimeout": 15000 // on localhost sometimes internet is slow so wait...
+                "waitForConditionTimeout": 15000, // on localhost sometimes internet is slow so wait...
+                "retryAssertionTimeout": 2000
             },
             "desiredCapabilities": {
                 "browserName": "chrome",

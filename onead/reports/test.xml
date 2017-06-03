@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="1"
             failures="0"
-            tests="2">
+            tests="1">
 
   <testsuite name="test"
-    errors="1" failures="0" hostname="" id="" package="test" skipped="1"
-    tests="2" time="0.009000" timestamp="Sat, 27 May 2017 18:20:53 GMT">
+    errors="1" failures="0" hostname="" id="" package="test" skipped="0"
+    tests="1" time="0.006000" timestamp="Thu, 01 Jun 2017 04:30:56 GMT">
   
-    <testcase name="Open mix the website" classname="test" time="0.009000" assertions="0">
+    <testcase name="Subway Login Page" classname="test" time="0.006000" assertions="0">
     </testcase>
       <system-err>
-          Error while running [Test / Open mix the website]:
+          Error while running [Test / Subway Login Page]:
 
-  ReferenceError: utils is not defined
-    at Object.Open mix the website (/Users/ryanmeng/Desktop/test/onead/test/event/test.js:4:9)
+  TypeError: browser.windowMaximize.url is not a function
+    at Object.Subway Login Page (/Users/ryanmeng/Desktop/test/onead/test/event/test.js:6:14)
     at Module.call (/Users/ryanmeng/Desktop/test/onead/node_modules/nightwatch/lib/runner/module.js:62:34)
     at /Users/ryanmeng/Desktop/test/onead/node_modules/nightwatch/lib/runner/testcase.js:70:29
     at _fulfilled (/Users/ryanmeng/Desktop/test/onead/node_modules/q/q.js:834:54)
@@ -25,13 +25,6 @@
     at _combinedTickCallback (internal/process/next_tick.js:73:7)
       </system-err>
   
-  
-    
-    <testcase
-      name="Subway Login Page" classname="test">
-      <skipped />
-    </testcase>
-    
   
   </testsuite>
 </testsuites>

@@ -4,8 +4,10 @@ const SCREENSHOT_PATH = "./node_modules/nightwatch/screenshots/" + PKG.version +
 
 const config = { // we use a nightwatch.conf.js file so we can include comments and helper functions
     "src_folders": [
-        "test/erp" // we use '/test' as the name of our test directory by default. So 'test/e2e' for 'e2e'.
+        "test/main" // we use '/test' as the name of our test directory by default. So 'test/e2e' for 'e2e'.
     ],
+    "page_objects_path": ['pages'],
+    "custom_commands_path": "command",
     "output_folder": "./node_modules/nightwatch/reports", // reports (test outcome) output by Nightwatch
     "selenium": {
         "start_process": true,
