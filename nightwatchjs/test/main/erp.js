@@ -1,16 +1,22 @@
 module.exports = {
-    '檢查登錄頁面：標題、元件': function(browser) {
+    '檢查登錄頁面：標題、頁面元件 - 載入與顯示': function(browser) {
         browser
             .page.utils().goPage()
             .page.utils().shouldAllElementPresent()
-            .pause(1000)
+            .page.utils().shouldAllElementVisible()
             .end();
     },
-    '檢查登錄頁面：Logo URL': function(browser) {
+    '檢查登錄頁面：Logo 載入.顯示.功能': function(browser) {
         browser
             .page.utils().goPage()
-            .page.utils().logoUrl()
-            .pause(1000)
+            .page.utils().logoElementPresentAndVisible()
+            .page.utils().logoFunction()
+            .end();
+    },
+    '檢查登錄頁面：訊息': function(browser) {
+        browser
+            .page.utils().goPage()
+            .page.utils().flashMessage()
             .end();
     },
     '檢查登錄頁面：登入失敗': function(browser) {
@@ -20,7 +26,6 @@ module.exports = {
             .page.utils().loginFailNoPassword()
             .page.utils().accountPasswordError()
             .saveScreenshot('screenshots' + '/login failed.png')
-            .pause(1000)
             .end();
     },
     '檢查登錄頁面：登入成功': function(browser) {
@@ -28,7 +33,37 @@ module.exports = {
             .page.utils().goPage()
             .page.utils().loginSuccess()
             .saveScreenshot('screenshots' + '/success.png')
-            .pause(1000)
+            .end();
+    },
+    '檢查忘記密碼頁面:頁面元件載入與顯示': function(browser) {
+        browser
+            .page.utils().goPage()
+            .page.utils().goForgetPasswordPage()
+            .page.utils().logoElementPresentAndVisible()
+            .page.utils().forgetPasswordPageElementPresent()
+            .page.utils().forgetPasswordPageElementVisible()
+            .end();
+    },
+    '檢查忘記密碼頁面:輸入錯誤信箱': function(browser) {
+        browser
+            .page.utils().goPage()
+            .page.utils().goForgetPasswordPage()
+            .page.utils().notExistUserMail()
+            .end();
+    },
+    //----- 輸入正確信箱後發送異常,暫不測試這塊 -----
+    // '檢查忘記密碼頁面:輸入正確信箱': function(browser) {
+    //     browser
+    //         .page.utils().goPage()
+    //         .page.utils().goForgetPasswordPage()
+    //         .page.utils().existUserMail()
+    //         .end();
+    // },
+    '檢查忘記密碼頁面:點擊登入返回登入頁': function(browser) {
+        browser
+            .page.utils().goPage()
+            .page.utils().goForgetPasswordPage()
+            .page.utils().returnToTheLoginPage()
             .end();
     },
 

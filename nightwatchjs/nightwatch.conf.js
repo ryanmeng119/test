@@ -7,7 +7,6 @@ const config = { // we use a nightwatch.conf.js file so we can include comments 
         "test/main" // we use '/test' as the name of our test directory by default. So 'test/e2e' for 'e2e'.
     ],
     "page_objects_path": ['pages'],
-    "custom_commands_path": "command",
     "output_folder": "./node_modules/nightwatch/reports", // reports (test outcome) output by Nightwatch
     "selenium": {
         "start_process": true,
@@ -35,7 +34,7 @@ const config = { // we use a nightwatch.conf.js file so we can include comments 
             "username": "${SAUCE_USERNAME}", // if you want to use Saucelabs remember to
             "access_key": "${SAUCE_ACCESS_KEY}", // export your environment variables (see readme)
             "globals": {
-                "waitForConditionTimeout": 10000 // wait for content on the page before continuing
+                "waitForConditionTimeout": 1000 // wait for content on the page before continuing
             }
         },
         "local": {
@@ -48,7 +47,7 @@ const config = { // we use a nightwatch.conf.js file so we can include comments 
                 "path": SCREENSHOT_PATH
             }, // this allows us to control the
             "globals": {
-                "waitForConditionTimeout": 15000 // on localhost sometimes internet is slow so wait...
+                // "waitForConditionTimeout": 5000 // on localhost sometimes internet is slow so wait...
             },
             "desiredCapabilities": {
                 "browserName": "chrome",
